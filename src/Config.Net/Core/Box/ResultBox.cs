@@ -17,6 +17,8 @@ namespace Config.Net.Core.Box
          DefaultResult = defaultResult;
       }
 
+      public bool ShouldEncrypt { get; set; }
+
       public string Name { get; }
 
       public string StoreByName

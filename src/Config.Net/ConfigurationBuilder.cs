@@ -13,6 +13,7 @@ namespace Config.Net
       private List<IConfigStore> _stores = new List<IConfigStore>();
       private TimeSpan _cacheInterval = TimeSpan.Zero;
       private readonly List<ITypeParser> _customParsers = new List<ITypeParser>();
+      private ICrypter _crypter = null;
 
       public ConfigurationBuilder()
       {
@@ -30,7 +31,7 @@ namespace Config.Net
       public T Build()
       {
          var valueHandler = new ValueHandler(_customParsers);
-         var ioHandler = new IoHandler(_stores, valueHandler, _cacheInterval);
+         var ioHandler = new IoHandler(_stores, valueHandler, _cacheInterval, _crypter);
 
          T instance = _generator.CreateInterfaceProxyWithoutTarget<T>(new InterfaceInterceptor(typeof(T), ioHandler));
 
@@ -67,6 +68,21 @@ namespace Config.Net
          }
 
          _customParsers.Add(parser);
+
+         return this;
+      }
+
+      /// <summary>
+      /// Adds an encryption provider
+      /// </summary>
+      public ConfigurationBuilder<T> UseCrypter(ICrypter crypter)
+      {
+         if (crypter == null)
+         {
+            throw new ArgumentNullException(nameof(crypter));
+         }
+
+         _crypter = crypter;
 
          return this;
       }

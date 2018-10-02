@@ -99,16 +99,16 @@ namespace Config.Net.Core.Box
 
       private static void AddAttributes(ResultBox box, PropertyInfo pi, ValueHandler valueHandler)
       {
-         AddAttributes(box, valueHandler, pi.GetCustomAttribute<OptionAttribute>());
+         AddAttributes(box, valueHandler, pi.GetCustomAttribute<OptionAttribute>(), pi.GetCustomAttribute<EncryptAttribute>(true));
       }
 
       private static void AddAttributes(ResultBox box, MethodInfo mi, ValueHandler valueHandler)
       {
-         AddAttributes(box, valueHandler, mi.GetCustomAttribute<OptionAttribute>());
+         AddAttributes(box, valueHandler, mi.GetCustomAttribute<OptionAttribute>(), mi.GetCustomAttribute<EncryptAttribute>(true));
       }
 
 
-      private static void AddAttributes(ResultBox box, ValueHandler valueHandler, OptionAttribute optionAttribute)
+      private static void AddAttributes(ResultBox box, ValueHandler valueHandler, OptionAttribute optionAttribute, EncryptAttribute encryptAttribute)
       {
          object defaultValue = null;
 
@@ -140,6 +140,11 @@ namespace Config.Net.Core.Box
          if (defaultValue == null) defaultValue = GetDefaultValue(box.ResultType);
 
          box.DefaultResult = defaultValue;
+
+         if(encryptAttribute != null)
+         {
+            box.ShouldEncrypt = true;
+         }
       }
 
 

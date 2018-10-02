@@ -33,7 +33,7 @@ namespace Config.Net.Core
       {
          string path = OptionPath.Combine(index, _basePath, pbox.StoreByName);
 
-         return _ioHandler.Read(pbox.ResultBaseType, path, pbox.DefaultResult);
+         return _ioHandler.Read(pbox.ResultBaseType, path, pbox.DefaultResult, pbox.ShouldEncrypt);
       }
 
       private object ReadProxy(ProxyResultBox xbox, int index)
@@ -55,7 +55,7 @@ namespace Config.Net.Core
 
          if (!cbox.IsInitialised)
          {
-            int length = (int)_ioHandler.Read(typeof(int), lengthPath, 0);
+            int length = (int)_ioHandler.Read(typeof(int), lengthPath, 0, cbox.ShouldEncrypt);
 
             cbox.Initialise(_basePath, length, this);
          }
@@ -68,7 +68,7 @@ namespace Config.Net.Core
          string path = mbox.GetValuePath(arguments);
          path = OptionPath.Combine(_basePath, path);
 
-         return _ioHandler.Read(mbox.ResultBaseType, path, mbox.DefaultResult);
+         return _ioHandler.Read(mbox.ResultBaseType, path, mbox.DefaultResult, mbox.ShouldEncrypt);
       }
    }
 }

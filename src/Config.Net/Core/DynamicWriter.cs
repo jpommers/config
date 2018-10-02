@@ -29,7 +29,7 @@ namespace Config.Net.Core
       {
          string path = OptionPath.Combine(_basePath, pbox.StoreByName);
 
-         _ioHandler.Write(pbox.ResultBaseType, path, arguments[0]);
+         _ioHandler.Write(pbox.ResultBaseType, path, arguments[0], pbox.ShouldEncrypt);
       }
 
       private void WriteMethod(MethodResultBox mbox, object[] arguments)
@@ -37,7 +37,7 @@ namespace Config.Net.Core
          object value = arguments[arguments.Length - 1];
          string path = mbox.GetValuePath(arguments);
 
-         _ioHandler.Write(mbox.ResultBaseType, path, value);
+         _ioHandler.Write(mbox.ResultBaseType, path, value, mbox.ShouldEncrypt);
       }
 
       private void WriteProxy(ProxyResultBox xbox, object[] arguments)
