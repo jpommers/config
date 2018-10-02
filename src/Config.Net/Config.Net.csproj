@@ -8,9 +8,9 @@
       <AssemblyOriginatorKeyFile>../config.snk</AssemblyOriginatorKeyFile>
       <SignAssembly>true</SignAssembly>
       <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
-      <PackageId>Config.Net</PackageId>
+      <PackageId>Config.Net.JP</PackageId>
       <PackageIconUrl>http://i.isolineltd.com/nuget/config.net.png</PackageIconUrl>
-      <PackageProjectUrl>https://github.com/aloneguid/config</PackageProjectUrl>
+      <PackageProjectUrl>https://github.com/jpommers/config</PackageProjectUrl>
       <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.6' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
       <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.6' ">1.6.1</NetStandardImplicitPackageVersion>
       <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -18,11 +18,11 @@
       <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
       <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
       <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      <FileVersion>4.7.3.0</FileVersion>
-      <Version>4.7.3</Version>
+      <FileVersion>4.7.4.0</FileVersion>
+      <Version>4.7.4</Version>
       <Description>Super simple configuration framework for .NET focused on developer ergonomics and strong typing. Supports multiple configuration sources such as .ini, .json, .xml files, as well as external providers pluggable by other NuGet packages.</Description>
-      <RepositoryUrl>https://github.com/aloneguid/config</RepositoryUrl>
-      <PackageLicenseUrl>https://github.com/aloneguid/config/blob/master/LICENSE</PackageLicenseUrl>
+      <RepositoryUrl>https://github.com/jpommers/config</RepositoryUrl>
+      <PackageLicenseUrl>https://github.com/jpommers/config/blob/master/LICENSE</PackageLicenseUrl>
       <RepositoryType>GitHub</RepositoryType>
       <PackageReleaseNotes>all of the stores support collections, including simple stores</PackageReleaseNotes>
       <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
