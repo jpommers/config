@@ -18,8 +18,8 @@
       <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
       <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
       <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      <FileVersion>4.7.4.0</FileVersion>
-      <Version>4.7.4</Version>
+      <FileVersion>4.7.5.0</FileVersion>
+      <Version>4.7.5</Version>
       <Description>Super simple configuration framework for .NET focused on developer ergonomics and strong typing. Supports multiple configuration sources such as .ini, .json, .xml files, as well as external providers pluggable by other NuGet packages.</Description>
       <RepositoryUrl>https://github.com/jpommers/config</RepositoryUrl>
       <PackageLicenseUrl>https://github.com/jpommers/config/blob/master/LICENSE</PackageLicenseUrl>
