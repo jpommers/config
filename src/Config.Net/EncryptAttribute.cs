@@ -5,7 +5,7 @@ using System.Text;
 namespace Config.Net
 {
    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Method, AllowMultiple = false)]
-   class EncryptAttribute : Attribute
+   public class EncryptAttribute : Attribute
    {
    }
 }
